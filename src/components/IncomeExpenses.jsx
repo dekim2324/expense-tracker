@@ -6,11 +6,11 @@ export const IncomeExpenses = () => {
     const amount = transactions.map(transactions => transactions.amount);
     const income = amount
         .filter(amount => amount > 0)
-        .reduce((accum, cur) => accum + cur)
+        .reduce((accum, cur) => (accum + cur), 0)
         .toFixed(2);
     const expense = (amount
         .filter(amount => amount < 0)
-        .reduce((accum, cur) => accum + cur) * -1)
+        .reduce((accum, cur) => (accum + cur), 0) * -1)
         .toFixed(2);
 
     return (
